@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 13:24:00 by mboujama          #+#    #+#             */
-/*   Updated: 2024/03/26 13:10:32 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/03/27 12:55:34 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,20 +56,10 @@ int	ft_sizelst(t_stack *lst)
 	return (count);
 }
 
-void	ft_rm_last(t_stack **stack)
+void	ft_addfront(t_stack **lst, t_stack *new)
 {
-	if (!(*stack)->next)
-	{
-		free(*stack);
-		*stack = NULL;
+	if (!lst || !new)
 		return ;
-	}
-	while ((*stack)->next)
-	{
-		if (!(*stack)->next->next)
-			break ;
-		*stack = (*stack)->next;
-	}
-	free((*stack)->next);
-	(*stack)->next = NULL;
+	new->next = *lst;
+	*lst = new;
 }

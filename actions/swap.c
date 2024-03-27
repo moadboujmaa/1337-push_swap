@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 12:05:48 by mboujama          #+#    #+#             */
-/*   Updated: 2024/03/27 12:03:29 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/03/27 14:09:36 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	sa(t_stack *stack)
 	if (ft_sizelst(stack) <= 1)
 		return (0);
 	swap(stack);
+	ft_printf("sa\n");
 	return (1);
 }
 
@@ -38,6 +39,7 @@ int	sb(t_stack *stack)
 	if (ft_sizelst(stack) <= 1)
 		return (0);
 	swap(stack);
+	ft_printf("sb\n");
 	return (1);
 }
 
@@ -47,5 +49,6 @@ int	ss(t_stack *stack_a, t_stack *stack_b)
 		return (0);
 	swap(stack_a);
 	swap(stack_b);
+	ft_printf("ss\n");
 	return (1);
 }
