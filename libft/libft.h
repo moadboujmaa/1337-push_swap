@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:25:35 by mboujama          #+#    #+#             */
-/*   Updated: 2024/03/17 08:49:07 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/03/28 09:30:58 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 // Additional functions
 char	*ft_2d_search(char **arr, char *str);
 void	ft_2d_free(char **arr);
+int		ft_isnumber(char *str);
 
 // printf functions
 int		ft_printf(const char *str, ...);

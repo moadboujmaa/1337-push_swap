@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_isnumber.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 11:53:46 by mboujama          #+#    #+#             */
-/*   Updated: 2024/03/28 11:44:20 by mboujama         ###   ########.fr       */
+/*   Created: 2024/03/28 09:27:53 by mboujama          #+#    #+#             */
+/*   Updated: 2024/03/28 09:58:04 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+int	ft_isnumber(char *str)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-
-	(void) stack_b;
-	if (argc >= 2)
+	if (*str == '-')
+		str++;
+	while (*str)
 	{
-		fill_stack(&stack_a, argv + 1);
-		while (stack_a)
-		{
-			printf("%d\n", stack_a->nb);
-			stack_a = stack_a->next;
-		}
+		if (!ft_isdigit(*str))
+			return (0);
+		str++;
 	}
-	return (0);
+	return (1);
 }

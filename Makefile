@@ -9,11 +9,12 @@ all: $(NAME)
 
 
 $(NAME): $(OBJ)
-	$(LIBFT)
-	$(CC) $(SRC) -o $(NAME) ./libft/libft.a
+	@$(LIBFT)
+	@$(CC) $(SRC) -o $(NAME) ./libft/libft.a
+	@echo "\033[32;1mPush_Swap Ready to execute\033[0m"
 
 %.o: %.c push_swap.h
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@make clean -C ./libft
