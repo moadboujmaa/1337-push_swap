@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 13:36:59 by mboujama          #+#    #+#             */
-/*   Updated: 2024/03/28 11:43:14 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/03/28 13:51:24 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,20 +56,18 @@ int	is_duplicated(t_stack **stack)
 	return (0);
 }
 
-void	check(t_stack **stack)
-{
-	if (!is_sorted(stack) || is_duplicated(stack))
-		print_error();
-}
-
 void	fill_stack(t_stack **stack, char **arr_nb)
 {
 	char	**numbers;
+	char	**nbs;
+	int		i;
 
+	i = 0;
 	if (ft_strchr(arr_nb[0], ' '))
 		numbers = ft_split(arr_nb[0], ' ');
 	else
 		numbers = arr_nb;
+	nbs = numbers;
 	while (*numbers)
 	{
 		if (ft_isnumber(*numbers))
@@ -78,5 +76,9 @@ void	fill_stack(t_stack **stack, char **arr_nb)
 			print_error();
 		numbers++;
 	}
-	check(stack);
+	while (nbs[i])
+		free(nbs[i++]);
+	free(nbs);
+	if (is_duplicated(stack))
+		print_error();
 }
