@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 13:36:59 by mboujama          #+#    #+#             */
-/*   Updated: 2024/03/28 13:51:24 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/12 16:43:21 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,18 @@ void	print_error(void)
 {
 	ft_printf("Error\n");
 	exit(1);
+}
+
+void	ft_print_stack(t_stack **stack)
+{
+	t_stack	*current;
+
+	current = *stack;
+	while (current)
+	{
+		ft_printf("{%d}\n", current->nb);
+		current = current->next;
+	}
 }
 
 int	is_sorted(t_stack **stack)
@@ -59,7 +71,6 @@ int	is_duplicated(t_stack **stack)
 void	fill_stack(t_stack **stack, char **arr_nb)
 {
 	char	**numbers;
-	char	**nbs;
 	int		i;
 
 	i = 0;
@@ -67,18 +78,21 @@ void	fill_stack(t_stack **stack, char **arr_nb)
 		numbers = ft_split(arr_nb[0], ' ');
 	else
 		numbers = arr_nb;
-	nbs = numbers;
-	while (*numbers)
+	while (numbers[i])
 	{
-		if (ft_isnumber(*numbers))
-			ft_addback(stack, ft_newitem(ft_atoi(*numbers)));
+		if (ft_isnumber(numbers[i]))
+			ft_addfront(stack, ft_newitem(ft_atoi(numbers[i])));
 		else
 			print_error();
-		numbers++;
+		i++;
 	}
-	while (nbs[i])
-		free(nbs[i++]);
-	free(nbs);
+	if (numbers != arr_nb)
+	{
+		i = 0;
+		while (numbers[i])
+			free(numbers[i++]);
+		free(numbers);
+	}
 	if (is_duplicated(stack))
 		print_error();
 }

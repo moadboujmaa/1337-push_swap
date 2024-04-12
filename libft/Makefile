@@ -9,14 +9,12 @@ all : $(NAME)
 
 $(NAME) : $(OBJ)
 	@ar rc $(NAME) $(OBJ)
-	@echo "libft.a created"
 
 %.o: %.c libft.h
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
 	@rm -f $(OBJ) $(BOBJ)
-	@echo "\033[33mLibft object files removed\033[0m"
 
 fclean : clean
 	@rm -f $(NAME)

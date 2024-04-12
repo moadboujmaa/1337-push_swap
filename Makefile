@@ -3,15 +3,21 @@ SRC=push_swap.c ./actions/push.c ./actions/swap.c ./actions/rotate.c ./actions/r
 OBJ=$(SRC:.c=.o)
 CC=cc
 CFLAGS=-Wall -Wextra -Werror
-LIBFT=make -C ./libft
+LIBFT_AR=./libft/libft.a
 
 all: $(NAME)	
 
+$(LIBFT_AR):
+	@make -C ./libft
 
-$(NAME): $(OBJ)
-	@$(LIBFT)
-	@$(CC) $(SRC) -o $(NAME) ./libft/libft.a
-	@echo "\033[32;1mPush_Swap Ready to execute\033[0m"
+$(NAME): $(OBJ) $(LIBFT_AR)
+	@$(CC) $(SRC) -o $(NAME) $(LIBFT_AR)
+	@echo "██████╗ ██╗   ██╗███████╗██╗  ██╗███████╗██╗    ██╗ █████╗ ██████╗ "
+	@echo "██╔══██╗██║   ██║██╔════╝██║  ██║██╔════╝██║    ██║██╔══██╗██╔══██╗"
+	@echo "██████╔╝██║   ██║███████╗███████║███████╗██║ █╗ ██║███████║██████╔╝"
+	@echo "██╔═══╝ ██║   ██║╚════██║██╔══██║╚════██║██║███╗██║██╔══██║██╔═══╝ "
+	@echo "██║     ╚██████╔╝███████║██║  ██║███████║╚███╔███╔╝██║  ██║██║     "
+	@echo "╚═╝      ╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝     "
 
 %.o: %.c push_swap.h
 	@$(CC) $(CFLAGS) -c $< -o $@
