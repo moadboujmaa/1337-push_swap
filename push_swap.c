@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 11:53:46 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/13 20:10:00 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/13 22:34:26 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 
 void	push_swap(t_stack **stack_a, t_stack **stack_b)
 {
-	(void)stack_a;
-	(void)stack_b;
+	if (ft_sizelst(*stack_a) == 2)
+		sort_two(stack_a);
+	else if (ft_sizelst(*stack_a) == 3)
+		sort_three(stack_a);
+	else if (ft_sizelst(*stack_a) == 4)
+		sort_four(stack_a, stack_b);
 }
 
 int	main(int argc, char **argv)
@@ -30,8 +34,6 @@ int	main(int argc, char **argv)
 		fill_stack(&stack_a, argv + 1);
 		if (is_sorted(&stack_a))
 			exit(0);
-		printf("stack_a after:\n");
-		ft_print_stack(&stack_a);
 		push_swap(&stack_a, &stack_b);
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 11:53:46 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/13 20:03:26 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/13 22:43:44 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,13 @@ void	fill_stack(t_stack **stack, char **argv);
 int		is_sorted(t_stack **stack);
 int		is_duplicated(t_stack **stack);
 void	split_and_add(t_stack **stack, char *str);
+
+// sort
+void	sort_two(t_stack **stack);
+void	sort_three(t_stack **stack);
+void	sort_four(t_stack **stack_a, t_stack **stack_b);
+
+// sort_utils
+int 	get_min(t_stack *stack);
 
 #endif
