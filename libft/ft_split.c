@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 15:29:02 by mboujama          #+#    #+#             */
-/*   Updated: 2024/02/29 12:34:45 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/13 17:46:00 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,21 +89,21 @@ char	**ft_split(char const *s, char c)
 	return (lst);
 }
 
-// int	main(void)
-// {
-// 	char	**lst;
-// 	char	*s;
-// 	int		i;
+int	main(void)
+{
+	char	**lst;
+	char	*s;
+	int		i;
 
-// 	i = 0;
-// 	s = "test split function - moad boujamaa";
-// 	lst = ft_split(s, ' ');
-// 	if (lst)
-// 		printf("%s\n", lst[i]);
-// 	while (lst[i])
-// 	{
-// 		printf("%s\n", lst[i]);
-// 		i++;
-// 	}
-// 	return (0);
-// }
+	i = 0;
+	s = "";
+	lst = ft_split(s, ' ');
+	if (lst)
+		printf("%s\n", lst[i]);
+	while (lst[i])
+	{
+		printf("%s\n", lst[i]);
+		i++;
+	}
+	return (0);
+}

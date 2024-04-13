@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 11:53:46 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/07 13:51:36 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/13 20:03:26 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 # include "./libft/libft.h"
 
 typedef struct s_stack	t_stack;
@@ -23,6 +24,7 @@ typedef struct s_stack	t_stack;
 struct s_stack
 {
 	int		nb;
+	int		index;
 	t_stack	*next;
 };
 
@@ -40,17 +42,20 @@ int		rrb(t_stack **stack);
 int		rrr(t_stack **stack_a, t_stack **stack_b);
 
 // utils
-t_stack	*ft_newitem(int content);
+t_stack	*ft_newitem(int content, int index);
 void	ft_addback(t_stack **lst, t_stack *new);
 t_stack	*ft_getlast(t_stack *lst);
 int		ft_sizelst(t_stack *lst);
 void	ft_addfront(t_stack **lst, t_stack *new);
 void	print_error(void);
 void	ft_print_stack(t_stack **stack);
+long	ft_atol(char *str);
 
 // fill stack
+void	print_error(void);
 void	fill_stack(t_stack **stack, char **argv);
 int		is_sorted(t_stack **stack);
 int		is_duplicated(t_stack **stack);
+void	split_and_add(t_stack **stack, char *str);
 
 #endif

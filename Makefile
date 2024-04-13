@@ -1,8 +1,8 @@
 NAME=push_swap
-SRC=push_swap.c ./actions/push.c ./actions/swap.c ./actions/rotate.c ./actions/rrotate.c ./utils/lst.c ./utils/fill_stack.c
+SRC=push_swap.c ./actions/push.c ./actions/swap.c ./actions/rotate.c ./actions/rrotate.c ./utils/lst.c ./utils/fill_stack.c ./utils/print_error.c ./utils/parse.c
 OBJ=$(SRC:.c=.o)
 CC=cc
-CFLAGS=-Wall -Wextra -Werror
+CFLAGS=-Wall -Wextra -Werror -fsanitize=address
 LIBFT_AR=./libft/libft.a
 
 all: $(NAME)	
