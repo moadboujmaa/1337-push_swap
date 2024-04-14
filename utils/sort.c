@@ -6,16 +6,11 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 13:36:59 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/14 16:09:16 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/14 21:21:06 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void	sort_two(t_stack **stack)
-{
-	sa(stack);
-}
 
 void	sort_three(t_stack **stack)
 {
@@ -86,6 +81,9 @@ void	sort_five(t_stack **stack_a, t_stack **stack_b)
 
 void	ft_big_sort(t_stack **stack_a, t_stack **stack_b)
 {
-	(void) stack_a;
+	t_stack	**copy_stack;
+
+	copy_stack = NULL;
+	copy_sort_stack(*stack_a, copy_stack);
 	(void) stack_b;
 }

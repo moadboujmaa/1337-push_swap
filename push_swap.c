@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 11:53:46 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/14 16:08:07 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/14 20:47:49 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	push_swap(t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_sizelst(*stack_a) == 2)
-		sort_two(stack_a);
+		sa(stack_a);
 	else if (ft_sizelst(*stack_a) == 3)
 		sort_three(stack_a);
 	else if (ft_sizelst(*stack_a) == 4)

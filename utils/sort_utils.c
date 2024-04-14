@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 13:36:59 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/14 15:53:47 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/14 21:21:45 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,20 @@ void	multi_move(t_stack **stack, char *move, int nb)
 			i++;
 		}
 	}
+}
+
+void	copy_sort_stack(t_stack *original, t_stack **new)
+{
+	while (original)
+	{
+		ft_addback(new, ft_newitem((original)->nb, 0));
+		original = (original)->next;
+	}
+	printf("==========>>\n");
+	// new = top;
+	// while (*new)
+	// {
+	// 	printf("%d\n", (*new)->nb);
+	// 	*new = (*new)->next;
+	// }
 }
