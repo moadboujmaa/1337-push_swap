@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 13:36:59 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/13 20:15:05 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/14 17:44:42 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	split_and_add(t_stack **stack, char *str)
 			print_error();
 		i++;
 	}
+	while (1);
 }
 
 int	is_sorted(t_stack **stack)
