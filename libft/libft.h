@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:25:35 by mboujama          #+#    #+#             */
-/*   Updated: 2024/03/28 09:30:58 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/15 10:36:58 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void	ft_putnbr(long n, int *len);
 void	ft_putstr(char *s, int *len);
 void	ft_puthexa(unsigned long nb, char c, int *len);
 void	ft_putpointer(unsigned long nb, int *len);
+int		ft_strcmp(char *s1, char *s2);
 
 // pipex functions
 t_list	*ft_split_commands(char const *str);

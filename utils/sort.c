@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 13:36:59 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/14 21:21:06 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/15 16:04:38 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,14 @@ void	sort_five(t_stack **stack_a, t_stack **stack_b)
 
 void	ft_big_sort(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	**copy_stack;
+	t_stack	*copy_stack;
+	int		min_range;
+	int		max_range;
 
+	min_range = 0;
+	max_range = get_range(ft_sizelst(*stack_a));
 	copy_stack = NULL;
-	copy_sort_stack(*stack_a, copy_stack);
-	(void) stack_b;
+	copy_sort_stack(*stack_a, &copy_stack);
+	index_stack(stack_a, copy_stack);
+	push_2_b(stack_a, stack_b, &min_range, &max_range);
 }

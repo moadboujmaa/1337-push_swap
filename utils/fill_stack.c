@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 13:36:59 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/13 21:31:57 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/15 10:56:59 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	fill_stack(t_stack **stack, char **arr_nb)
 			split_and_add(stack, arr_nb[i++]);
 		else
 		{
-			if ((ft_atol(arr_nb[i]) <= INT_MAX && ft_atol(arr_nb[i]) >= INT_MIN)
-				&& ft_isnumber(arr_nb[i]))
+			if (is_minus(arr_nb[i]) && (ft_atol(arr_nb[i]) <= INT_MAX
+					&& ft_atol(arr_nb[i]) >= INT_MIN) && ft_isnumber(arr_nb[i]))
 				ft_addback(stack, ft_newitem(ft_atol(arr_nb[i++]), 0));
 			else
 				print_error();

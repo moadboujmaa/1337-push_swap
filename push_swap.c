@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 11:53:46 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/14 20:47:49 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/15 14:59:46 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int	main(int argc, char **argv)
 		if (is_sorted(&stack_a))
 			exit(0);
 		push_swap(&stack_a, &stack_b);
+		// printf("stack_a:\n");
+		// ft_print_stack(&stack_a);
 	}
 	return (0);
 }

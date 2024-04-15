@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 13:36:59 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/14 17:44:42 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/15 10:58:40 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,13 @@ void	split_and_add(t_stack **stack, char *str)
 	i = 0;
 	while (arr[i])
 	{
-		if (ft_isnumber(arr[i]) && (ft_atol(arr[i]) <= INT_MAX
-				&& ft_atol(arr[i]) >= INT_MIN))
+		if (is_minus(arr[i]) && ft_isnumber(arr[i]) && (ft_atol(arr[i])
+				<= INT_MAX && ft_atol(arr[i]) >= INT_MIN))
 			ft_addback(stack, ft_newitem(ft_atol(arr[i]), 0));
 		else
 			print_error();
 		i++;
 	}
-	while (1);
 }
 
 int	is_sorted(t_stack **stack)
@@ -86,9 +85,9 @@ int	is_sorted(t_stack **stack)
 
 long	ft_atol(char *str)
 {
-	long					res;
-	int						sign;
-	int						i;
+	long	res;
+	int		sign;
+	int		i;
 
 	i = 0;
 	sign = 1;
