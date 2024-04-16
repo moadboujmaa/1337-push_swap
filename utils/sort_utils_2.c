@@ -39,9 +39,11 @@ void	index_stack(t_stack **stack_a, t_stack *indexed)
 int	get_range(int len)
 {
 	if (len <= 30)
-		return (5);
-	else
+		return (1);
+	else if (len <= 250)
 		return (len * 15 / 100);
+	else
+		return (len * 8  / 100);
 }
 
 int	get_max_index(t_stack *stack)

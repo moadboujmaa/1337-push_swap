@@ -15,10 +15,8 @@
 char	*get_next_quote(char *str)
 {
 	int	len;
-	int	i;
 
 	len = 0;
-	i = 0;
 	while (*str && str[len] != '\'')
 	{
 		if (str[len] == '\'')
@@ -31,10 +29,8 @@ char	*get_next_quote(char *str)
 char	*get_next_space(char *str)
 {
 	int	len;
-	int	i;
 
 	len = 0;
-	i = 0;
 	while (*str && str[len] != ' ')
 	{
 		if (str[len] == ' ')

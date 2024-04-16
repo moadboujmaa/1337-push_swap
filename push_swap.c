@@ -46,7 +46,6 @@ int	main(int argc, char **argv)
 			free(stack_a);
 			stack_a = tmp;
 		}
-		system("leaks push_swap");
 	}
 	return (0);
 }
