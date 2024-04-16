@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 11:53:46 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/16 14:13:00 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:15:31 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	t_stack	*tmp;
 
 	stack_a = NULL;
 	stack_b = NULL;
@@ -39,7 +40,13 @@ int	main(int argc, char **argv)
 		if (is_sorted(&stack_a))
 			exit(0);
 		push_swap(&stack_a, &stack_b);
-		// todo: free nodes
+		while (stack_a)
+		{
+			tmp = stack_a->next;
+			free(stack_a);
+			stack_a = tmp;
+		}
+		system("leaks push_swap");
 	}
 	return (0);
 }

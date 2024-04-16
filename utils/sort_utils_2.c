@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:04:27 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/16 14:47:27 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:10:29 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	index_stack(t_stack **stack_a, t_stack *indexed)
 int	get_range(int len)
 {
 	if (len <= 30)
-		return (2);
+		return (5);
 	else
 		return (len * 15 / 100);
 }
@@ -97,11 +97,11 @@ void	push_2_a(t_stack **stack_a, t_stack **stack_b)
 	{
 		max_index = get_max_index(*stack_b);
 		lst_size = ft_sizelst(*stack_b);
-		if (max_index > lst_size / 2)
-			multi_move2(stack_b, "rrb", (lst_size - max_index) + 1);
-		else
-			multi_move2(stack_b, "rb", max_index + 1);
-		if (*stack)
+		if (max_index == 0)
 			pa(stack_a, stack_b);
+		else if (max_index > lst_size / 2)
+			rrb(stack_b);
+		else
+			rb(stack_b);
 	}
 }
