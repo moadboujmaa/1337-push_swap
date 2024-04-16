@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 11:53:46 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/15 16:03:32 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:53:12 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	split_and_add(t_stack **stack, char *str);
 int		is_minus(char *str);
 
 // sort
+void	multi_move2(t_stack **stack, char *move, int nb);
 void	sort_three(t_stack **stack);
 void	sort_four(t_stack **stack_a, t_stack **stack_b);
 void	sort_five(t_stack **stack_a, t_stack **stack_b);
@@ -71,6 +72,7 @@ void	multi_move(t_stack **stack, char *move, int nb);
 void	copy_sort_stack(t_stack *original, t_stack **new);
 void	index_stack(t_stack **stack_a, t_stack *indexed);
 int		get_range(int len);
-void	push_2_b(t_stack **stack_a, t_stack **stack_b, int *min, int *max);
+void	push_2_b(t_stack **stack_a, t_stack **stack_b, int min, int max);
+void	push_2_a(t_stack **stack_a, t_stack **stack_b);
 
 #endif

@@ -6,11 +6,34 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 13:36:59 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/15 16:04:38 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:54:21 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	multi_move2(t_stack **stack, char *move, int nb)
+{
+	int	i;
+
+	i = 0;
+	if (ft_strncmp(move, "rb", 2))
+	{
+		while (i < nb)
+		{
+			rb(stack);
+			i++;
+		}
+	}
+	else
+	{
+		while (i < nb)
+		{
+			rrb(stack);
+			i++;
+		}
+	}
+}
 
 void	sort_three(t_stack **stack)
 {
@@ -90,5 +113,6 @@ void	ft_big_sort(t_stack **stack_a, t_stack **stack_b)
 	copy_stack = NULL;
 	copy_sort_stack(*stack_a, &copy_stack);
 	index_stack(stack_a, copy_stack);
-	push_2_b(stack_a, stack_b, &min_range, &max_range);
+	push_2_b(stack_a, stack_b, min_range, max_range);
+	push_2_a(stack_a, stack_b);
 }

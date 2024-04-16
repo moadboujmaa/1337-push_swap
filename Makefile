@@ -2,7 +2,7 @@ NAME=push_swap
 SRC=push_swap.c ./actions/push.c ./actions/swap.c ./actions/rotate.c ./actions/rrotate.c ./utils/lst.c ./utils/fill_stack.c ./utils/print_error.c ./utils/parse.c ./utils/sort.c ./utils/sort_utils.c ./utils/parse2.c ./utils/sort_utils_2.c
 OBJ=$(SRC:.c=.o)
 CC=cc
-CFLAGS=-Wall -Wextra -Werror -fsanitize=address
+CFLAGS=-Wall -Wextra -Werror
 LIBFT_AR=./libft/libft.a
 
 all: $(NAME)	
