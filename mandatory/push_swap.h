@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 11:53:46 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/16 12:53:12 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/17 12:24:41 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
-# include "./libft/libft.h"
+# include "../shared/libft/libft.h"
 
 typedef struct s_stack	t_stack;
 
@@ -57,7 +57,6 @@ void	fill_stack(t_stack **stack, char **argv);
 int		is_sorted(t_stack **stack);
 int		is_duplicated(t_stack **stack);
 void	split_and_add(t_stack **stack, char *str);
-int		is_minus(char *str);
 
 // sort
 void	multi_move2(t_stack **stack, char *move, int nb);

@@ -6,11 +6,11 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 13:36:59 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/16 16:13:54 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/17 12:25:20 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../mandatory/push_swap.h"
 
 void	ft_print_stack(t_stack **stack)
 {
@@ -56,7 +56,7 @@ void	split_and_add(t_stack **stack, char *str)
 	i = 0;
 	while (arr[i])
 	{
-		if (is_minus(arr[i]) && ft_isnumber(arr[i]) && (ft_atol(arr[i])
+		if (ft_isnumber(arr[i]) && (ft_atol(arr[i])
 				<= INT_MAX && ft_atol(arr[i]) >= INT_MIN))
 			ft_addback(stack, ft_newitem(ft_atol(arr[i]), 0));
 		else

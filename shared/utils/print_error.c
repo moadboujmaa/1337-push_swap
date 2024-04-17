@@ -6,11 +6,11 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 17:30:09 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/16 11:05:23 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/17 12:12:51 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../mandatory/push_swap.h"
 
 void	print_error(void)
 {

@@ -6,11 +6,11 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 13:24:00 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/13 17:16:57 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/17 12:12:39 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../mandatory/push_swap.h"
 
 t_stack	*ft_newitem(int content, int index)
 {

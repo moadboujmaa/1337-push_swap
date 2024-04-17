@@ -6,11 +6,11 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:04:27 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/16 16:10:29 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/17 12:22:41 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../mandatory/push_swap.h"
 
 void	index_stack(t_stack **stack_a, t_stack *indexed)
 {
@@ -43,7 +43,7 @@ int	get_range(int len)
 	else if (len <= 250)
 		return (len * 15 / 100);
 	else
-		return (len * 8  / 100);
+		return (len * 8 / 100);
 }
 
 int	get_max_index(t_stack *stack)

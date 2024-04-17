@@ -6,34 +6,11 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 13:36:59 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/16 16:04:26 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/17 12:37:07 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
-
-void	multi_move2(t_stack **stack, char *move, int nb)
-{
-	int	i;
-
-	i = 0;
-	if (ft_strncmp(move, "rb", 2))
-	{
-		while (i < nb)
-		{
-			rb(stack);
-			i++;
-		}
-	}
-	else
-	{
-		while (i < nb)
-		{
-			rrb(stack);
-			i++;
-		}
-	}
-}
+#include "../../mandatory/push_swap.h"
 
 void	sort_three(t_stack **stack)
 {

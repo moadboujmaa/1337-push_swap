@@ -6,11 +6,11 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 12:05:48 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/13 16:15:22 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/17 12:16:40 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../mandatory/push_swap.h"
 
 void	swap(t_stack **stack)
 {

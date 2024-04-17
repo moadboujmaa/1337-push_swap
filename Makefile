@@ -1,17 +1,22 @@
 NAME=push_swap
-SRC=push_swap.c ./actions/push.c ./actions/swap.c ./actions/rotate.c ./actions/rrotate.c ./utils/lst.c ./utils/fill_stack.c ./utils/print_error.c ./utils/parse.c ./utils/sort.c ./utils/sort_utils.c ./utils/parse2.c ./utils/sort_utils_2.c
+BONUS_NAME=checker
+SRC=./mandatory/push_swap.c
+BSRC=./bonus/checker.c
+SHARED=./shared/actions/push.c ./shared/actions/swap.c ./shared/actions/rotate.c ./shared/actions/rrotate.c ./shared/utils/lst.c ./shared/utils/fill_stack.c ./shared/utils/print_error.c ./shared/utils/parse.c ./shared/utils/sort.c ./shared/utils/sort_utils.c ./shared/utils/sort_utils_2.c
 OBJ=$(SRC:.c=.o)
+BOBJ=$(BSRC:.c=.o)
 CC=cc
 CFLAGS=-Wall -Wextra -Werror
-LIBFT_AR=./libft/libft.a
+LIBFT_AR=./shared/libft/libft.a
+LIBFT=./shared/libft
 
 all: $(NAME)	
 
 $(LIBFT_AR):
-	@make -C ./libft
+	@make -C $(LIBFT)
 
 $(NAME): $(OBJ) $(LIBFT_AR)
-	@$(CC) $(SRC) -o $(NAME) $(LIBFT_AR)
+	@$(CC) $(SRC) $(SHARED) -o $(NAME) $(LIBFT_AR)
 	@echo "██████╗ ██╗   ██╗███████╗██╗  ██╗███████╗██╗    ██╗ █████╗ ██████╗ "
 	@echo "██╔══██╗██║   ██║██╔════╝██║  ██║██╔════╝██║    ██║██╔══██╗██╔══██╗"
 	@echo "██████╔╝██║   ██║███████╗███████║███████╗██║ █╗ ██║███████║██████╔╝"
@@ -19,16 +24,19 @@ $(NAME): $(OBJ) $(LIBFT_AR)
 	@echo "██║     ╚██████╔╝███████║██║  ██║███████║╚███╔███╔╝██║  ██║██║     "
 	@echo "╚═╝      ╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝     "
 
-%.o: %.c push_swap.h
+%.o: %.c ./mandatory/push_swap.h
 	@$(CC) $(CFLAGS) -c $< -o $@
 
+bonus: $(BOBJ) $(LIBFT_AR)
+	@$(CC) $(BSRC) $(SHARED) -o $(BONUS_NAME) $(LIBFT_AR)
+
 clean:
-	@make clean -C ./libft
+	@make clean -C $(LIBFT)
 	@rm -f $(OBJ)
 	@echo "\033[33mPush_Swap object files removed\033[0m"
 
 fclean: clean
-	@make fclean -C ./libft
+	@make fclean -C $(LIBFT)
 	@rm -f $(NAME)
 
 re: fclean all
