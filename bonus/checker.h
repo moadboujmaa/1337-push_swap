@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 11:53:46 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/17 12:37:17 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/18 12:04:13 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
-# include "../shared/libft/libft.h"
+# include "./libft/libft.h"
 
 typedef struct s_stack	t_stack;
 
@@ -48,8 +48,7 @@ t_stack	*ft_getlast(t_stack *lst);
 int		ft_sizelst(t_stack *lst);
 void	ft_addfront(t_stack **lst, t_stack *new);
 void	print_error(void);
-void	ft_print_stack(t_stack **stack);
-long	ft_atol(char *str);
+void	free_stack(t_stack **stack);
 
 // fill stack
 void	print_error(void);
@@ -72,5 +71,6 @@ void	index_stack(t_stack **stack_a, t_stack *indexed);
 int		get_range(int len);
 void	push_2_b(t_stack **stack_a, t_stack **stack_b, int min, int max);
 void	push_2_a(t_stack **stack_a, t_stack **stack_b);
+void	is_sorted_exit(t_stack **stack);
 
 #endif
