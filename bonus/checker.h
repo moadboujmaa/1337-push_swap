@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 11:53:46 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/18 12:04:13 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:35:34 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,12 @@ void	ft_addback(t_stack **lst, t_stack *new);
 t_stack	*ft_getlast(t_stack *lst);
 int		ft_sizelst(t_stack *lst);
 void	ft_addfront(t_stack **lst, t_stack *new);
-void	print_error(void);
+
+// errors and free
 void	free_stack(t_stack **stack);
+void	free_arr(char **arr);
+void	print_error(void);
+void	print_error_s(t_stack **stack);
 
 // fill stack
 void	print_error(void);

@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 11:53:46 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/16 16:15:31 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:33:27 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	push_swap(t_stack **stack_a, t_stack **stack_b)
 		ft_big_sort(stack_a, stack_b);
 }
 
-int	main(int argc, char **argv)
+int	ft_main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
@@ -47,5 +47,11 @@ int	main(int argc, char **argv)
 			stack_a = tmp;
 		}
 	}
+	return (0);
+}
+
+int	main(int argc, char **argv)
+{
+	ft_main(argc, argv);
 	return (0);
 }

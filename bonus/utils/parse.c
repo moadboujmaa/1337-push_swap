@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 13:36:59 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/18 12:03:06 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:36:19 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,26 +75,8 @@ void	split_and_add(t_stack **stack, char *str)
 				<= INT_MAX && ft_atol(arr[i]) >= INT_MIN))
 			ft_addback(stack, ft_newitem(ft_atol(arr[i]), 0));
 		else
-			print_error();
+			print_error_s(stack);
 		i++;
 	}
-	i = 0;
-	while (arr[i])
-	{
-		free(arr[i]);
-		i++;
-	}
-	free(arr);
-}
-
-void	free_stack(t_stack **stack)
-{
-	t_stack	*tmp;
-
-	while (*stack)
-	{
-		tmp = (*stack)->next;
-		free(*stack);
-		*stack = tmp;
-	}
+	free_arr(arr);
 }

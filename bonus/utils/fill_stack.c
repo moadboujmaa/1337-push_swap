@@ -6,7 +6,7 @@
 /*   By: mboujama <mboujama@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 13:36:59 by mboujama          #+#    #+#             */
-/*   Updated: 2024/04/18 12:38:19 by mboujama         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:37:02 by mboujama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ void	fill_stack(t_stack **stack, char **arr_nb)
 					&& ft_atol(arr_nb[i]) >= INT_MIN) && ft_isnumber(arr_nb[i]))
 				ft_addback(stack, ft_newitem(ft_atol(arr_nb[i++]), 0));
 			else
-				print_error();
+				print_error_s(stack);
 		}
 	}
 	if (is_duplicated(stack))
-		print_error();
+		print_error_s(stack);
 }
