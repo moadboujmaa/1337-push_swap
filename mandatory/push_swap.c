@@ -26,7 +26,7 @@ void	push_swap(t_stack **stack_a, t_stack **stack_b)
 		ft_big_sort(stack_a, stack_b);
 }
 
-int	ft_main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
@@ -47,11 +47,5 @@ int	ft_main(int argc, char **argv)
 			stack_a = tmp;
 		}
 	}
-	return (0);
-}
-
-int	main(int argc, char **argv)
-{
-	ft_main(argc, argv);
 	return (0);
 }
